@@ -10,6 +10,7 @@
 .color-div{
     float:left;
     width: auto;
+    height:100%;
     text-align:center;
 }
 #main{
@@ -43,7 +44,7 @@ function generateColors(){
 	{
 		var newColorDiv = document.createElement('div');
 		newColorDiv.className ="color-div";
-		newColorDiv.setAttribute("color",  "hsl("+stepSize*i+",100%,50%)" );
+		newColorDiv.setAttribute("style",  "background-color:hsl("+stepSize*i+",100%,50%)" );
 		newColorDiv.innerHtml = "hsl("+stepSize*i+",100%,50%)";
 
 		colorShow.appendChild(newColorDiv);
