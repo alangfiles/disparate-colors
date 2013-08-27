@@ -34,6 +34,11 @@ function generateColors(){
 
 	var numColors = document.getElementById('number-of-colors').value;
 
+	if(numColors < 1)
+	{
+		numColors = 1;
+	}
+
 	var colorArray = [];
 
 	var stepSize = 360/numColors;
@@ -44,8 +49,8 @@ function generateColors(){
 	{
 		var newColorDiv = document.createElement('div');
 		newColorDiv.className ="color-div";
-		newColorDiv.setAttribute("style",  "background-color:hsl("+stepSize*i+",100%,50%)" );
-		newColorDiv.innerHtml = "<p>hsl("+stepSize*i+",100%,50%)</p>";
+		newColorDiv.setAttribute("style",  "background-color:hsl("+stepSize*i+",100%,50%); width:"+100/stepSize+";" );
+		newColorDiv.innerHTML = "<p>hsl("+stepSize*i+",100%,50%)</p>";
 
 		colorShow.appendChild(newColorDiv);
 
