@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Color Picker</title>
+</head>
+<body>
+
+<input type="number" id="number-of-colors" min="1" max="50">
+<input type="button" value="go!" onclick="generateColors();return false;">
+
+<div id="colorShow">
+</div>
+
+<script>
+
+function generateColors(){
+
+	var numColors = document.getElementById('number-of-colors').val();
+
+	var colorArray = [];
+
+	var stepSize = 360/numColors;
+
+	for(var i = 1; i < numColors; i++)
+	{
+		$('colorShow').add('div').css("background-color", "hsl("+stepSize*i+",100%,50%)");
+		var color = "hsl("+stepSize*i+",100%,50%)";
+		colorArray[i-1] = color;
+	}
+
+}
+
+
+</script>
+</body>
+</html>
