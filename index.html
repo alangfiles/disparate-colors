@@ -2,27 +2,52 @@
 <head>
 	<title>Color Picker</title>
 </head>
+<style>
+#color-show{
+    width:100%;
+    height:400px;
+}
+.color-div{
+    float:left;
+    width: auto;
+    text-align:center;
+}
+#main{
+	text-align:center;
+	width:100%;
+	height:100px;
+}
+</style>
 <body>
+<div id="main">
+	<input type="number" id="number-of-colors" min="1" max="50">
+	<input type="button" value="go!" onclick="generateColors();return false;">
+</div>
 
-<input type="number" id="number-of-colors" min="1" max="50">
-<input type="button" value="go!" onclick="generateColors();return false;">
-
-<div id="colorShow">
+<div id="color-show">
 </div>
 
 <script>
 
 function generateColors(){
 
-	var numColors = document.getElementById('number-of-colors').val();
+	var numColors = document.getElementById('number-of-colors').value;
 
 	var colorArray = [];
 
 	var stepSize = 360/numColors;
 
+	var colorShow = document.getElementById('color-show');
+
 	for(var i = 1; i < numColors; i++)
 	{
-		$('colorShow').add('div').css("background-color", "hsl("+stepSize*i+",100%,50%)");
+		var newColorDiv = document.createElement('div');
+		newColorDiv.className ="color-div";
+		newColorDiv.setAttribute("color",  "hsl("+stepSize*i+",100%,50%)" );
+		newColorDiv.innerHtml = "hsl("+stepSize*i+",100%,50%)";
+
+		colorShow.appendChild(newColorDiv);
+
 		var color = "hsl("+stepSize*i+",100%,50%)";
 		colorArray[i-1] = color;
 	}
