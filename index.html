@@ -32,6 +32,9 @@
 
 function generateColors(){
 
+	var colorShow = document.getElementById('color-show');
+	colorShow.innerHTML = "";
+
 	var numColors = document.getElementById('number-of-colors').value;
 
 	if(numColors < 1)
@@ -43,9 +46,9 @@ function generateColors(){
 
 	var stepSize = 360/numColors;
 
-	var colorShow = document.getElementById('color-show');
+	
 
-	for(var i = 1; i < numColors; i++)
+	for(var i = 1; i <= numColors; i++)
 	{
 		var newColorDiv = document.createElement('div');
 		newColorDiv.className ="color-div";
