@@ -84,7 +84,8 @@
       			}
       		})
 
-      		var colorShow = document.getElementById('close-color');
+          var colorShow = document.getElementById('close-color');
+          colorShow.innerHTML = "";
 
       		var newColorDiv = document.createElement('div');
       		newColorDiv.className ="color-div";
@@ -111,9 +112,10 @@
 
       	var stepSize = 360/numColors;
 
-      	var colorShow = document.getElementById('color-show');
+        var colorShow = document.getElementById('color-show');
+        colorShow.innerHTML = "";
 
-      	for(var i = 1; i < numColors; i++)
+      	for(var i = 0; i < numColors; i++)
       	{
       		var newColorDiv = document.createElement('div');
       		newColorDiv.className ="color-div";
