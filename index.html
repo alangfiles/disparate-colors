@@ -52,33 +52,33 @@
       )
 }
 		
-		let color = document.getElementById('close-color-input').value;
-		if(color[0] == '#'){
-			color = color.substring(1)
+		let icolor = document.getElementById('close-color-input').value;
+		if(icolor[0] == '#'){
+			icolor = icolor.substring(1)
 		}
 		
-		const r = parseInt(color.substring(0, 2), 16)
-		const g = parseInt(color.substring(2, 4), 16)
-		const b = parseInt(color.substring(4, 6), 16)
+		const r = parseInt(icolor.substring(0, 2), 16)
+		const g = parseInt(icolor.substring(2, 4), 16)
+		const b = parseInt(icolor.substring(4, 6), 16)
 		
 		let smallestDistance = 500; //largest distance should be ~441 (from 0,0,0 to 255,255,255)
 		let closestColor = '';
 		
-		namedColors.forEach(color=>{
-			let d = distance([r,g,b], color[2]);
+		namedColors.forEach(c=>{
+			let d = distance([r,g,b], c[2]);
 			if( d < smallestDistance) {
 				smallestDistance = distance;
-				closestColor = color;
+				closestColor = c;
 			}
+			console.log(c[0] + ' is ' + d + ' far away from ' + icolor)
 		})
-		return [closestColor, smallestDistance];
 		
 		var colorShow = document.getElementById('close-color');
 
 		var newColorDiv = document.createElement('div');
 		newColorDiv.className ="user-color-div";
-		newColorDiv.setAttribute("color",  color[0]=="#"?color:'#'+color);
-		newColorDiv.innerHtml = color;
+		newColorDiv.setAttribute("color",  icolor[0]=="#"?icolor:'#'+icolor);
+		newColorDiv.innerHtml = icolor;
 
 		colorShow.appendChild(newColorDiv);
 		
