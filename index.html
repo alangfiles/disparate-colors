@@ -3,7 +3,7 @@
 	<title>Color Picker</title>
 </head>
 <style>
-#color-show{
+#color-show, #close-color{
     width:100%;
     height:400px;
 }
@@ -76,14 +76,14 @@
 		var colorShow = document.getElementById('close-color');
 
 		var newColorDiv = document.createElement('div');
-		newColorDiv.className ="user-color-div";
+		newColorDiv.className ="color-div";
 		newColorDiv.setAttribute("color",  icolor[0]=="#"?icolor:'#'+icolor);
 		newColorDiv.innerHtml = icolor;
 
 		colorShow.appendChild(newColorDiv);
 		
 		var foundColorDiv = document.createElement('div');
-		foundColorDiv.className ="found-color-div";
+		foundColorDiv.className ="color-div";
 		foundColorDiv.setAttribute("color", closestColor[1] );
 		foundColorDiv.innerHtml = closestColor[0];
 
