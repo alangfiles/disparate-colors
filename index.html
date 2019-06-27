@@ -78,14 +78,14 @@
 		var newColorDiv = document.createElement('div');
 		newColorDiv.className ="color-div";
 		newColorDiv.setAttribute("color",  icolor[0]=="#"?icolor:'#'+icolor);
-		newColorDiv.innerHtml = icolor;
+		newColorDiv.innerHtml = "User Color: " + icolor;
 
 		colorShow.appendChild(newColorDiv);
 		
 		var foundColorDiv = document.createElement('div');
 		foundColorDiv.className ="color-div";
 		foundColorDiv.setAttribute("color", closestColor[1] );
-		foundColorDiv.innerHtml = closestColor[0];
+		foundColorDiv.innerHtml = "Named Color: " + closestColor[0];
 
 		colorShow.appendChild(foundColorDiv);
 		
