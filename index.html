@@ -51,8 +51,9 @@
     <script>
 
       let randomColor;
-      randomColor = "" + Math.floor(Math.random()*255).toString(16) + ""+Math.floor(Math.random()*255).toString(16)+""+Math.floor(Math.random()*255).toString(16)
+      randomColor = ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2);
       document.getElementById("close-color-input").value=randomColor
+      findClosestColor();
 
       	function findClosestColor(){
 
