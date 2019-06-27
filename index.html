@@ -49,12 +49,6 @@
     <div id="color-show"></div>
 
     <script>
-
-      let randomColor;
-      randomColor = ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2);
-      document.getElementById("close-color-input").value=randomColor;
-      findClosestColor();
-
       	function findClosestColor(){
 
       		const distance = function(point1, point2){
@@ -293,6 +287,12 @@
           ["WhiteSmoke", "#F5F5F5", [245, 245, 245]],
           ["Yellow", "#FFFF00", [255, 255, 0]],
           ["YellowGreen", "#9ACD32", [154, 205, 50]]];
+    </script>
+    <script>
+            let randomColor;
+      randomColor = ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2) + ("00" + Math.floor(Math.random()*255).toString(16)).slice(-2);
+      document.getElementById("close-color-input").value=randomColor;
+      findClosestColor();
     </script>
   </body>
 </html>
