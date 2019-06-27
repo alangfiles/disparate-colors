@@ -107,12 +107,12 @@
 
           colorShow.appendChild(newColorDiv);
           
-          closeArray.slice(3).forEach(
+          closeArray.slice(0,3).forEach(
             s => {
               var foundColorDiv = document.createElement('div');
               foundColorDiv.className ="color-div";
               foundColorDiv.setAttribute("style", "background-color: " +s[1][1] );
-              foundColorDiv.innerHTML = "Named Color: " + s[1][0] + " Distance: " + s[0];
+              foundColorDiv.innerHTML = "Named Color: " + s[1][0] + " Distance: " + s[0].toFixed(3);
 
               colorShow.appendChild(foundColorDiv);
             }
