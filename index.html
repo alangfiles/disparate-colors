@@ -79,7 +79,7 @@
       		namedColors.forEach(c=>{
       			let d = distance([r,g,b], c[2]);
       			if( d < smallestDistance) {
-      				smallestDistance = distance;
+      				smallestDistance = d;
       				closestColor = c;
       			}
       		})
