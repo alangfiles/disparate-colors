@@ -37,6 +37,17 @@
 
 <script>
 	
+		
+function distance(point1, point2){
+      const RedDiff = point2[0] - point1[0];
+      const GreenDiff = point2[1] - point1[1];
+      const BlueDiff = point2[2] - point1[2];
+
+      return Math.sqrt(
+        Math.pow(RedDiff, 2) + Math.pow(GreenDiff, 2) + Math.pow(BlueDiff, 2)
+      )
+}
+	
 	function findClosestColor(){
 		let color = document.getElementById('close-color-input').value;
 		if(color[0] == '#'){
@@ -60,16 +71,7 @@
 		return [closestColor, smallestDistance];
 		
 	}
-	
-function distance(point1, point2){
-      const RedDiff = point2[0] - point1[0];
-      const GreenDiff = point2[1] - point1[1];
-      const BlueDiff = point2[2] - point1[2];
 
-      return Math.sqrt(
-        Math.pow(RedDiff, 2) + Math.pow(GreenDiff, 2) + Math.pow(BlueDiff, 2)
-      )
-}
 
 function generateColors(){
 
