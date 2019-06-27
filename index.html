@@ -65,7 +65,7 @@
 		let closestColor = '';
 		
 		namedColors.forEach(color=>{
-			let d = distance([r,g,b], color.array);
+			let d = distance([r,g,b], color[2]);
 			if( d < smallestDistance) {
 				smallestDistance = distance;
 				closestColor = color;
