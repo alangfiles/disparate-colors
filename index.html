@@ -77,16 +77,25 @@
       		const g = parseInt(icolor.substring(2, 4), 16)
       		const b = parseInt(icolor.substring(4, 6), 16)
 
-      		let smallestDistance = 500; //largest distance should be ~441 (from 0,0,0 to 255,255,255)
-      		let closestColor = '';
+      		
+          let closeArray = [];
 
       		namedColors.forEach(c=>{
-      			let d = distance([r,g,b], c[2]);
-      			if( d < smallestDistance) {
-      				smallestDistance = d;
-      				closestColor = c;
-      			}
-      		})
+            let d = distance([r,g,b], c[2]);
+            closeArray.push([d,c]);
+          })
+
+          closeArray.sort( (a,b) => {
+            if(a[0] < b[0])
+              return -1;
+            if(a[0] > b[0])
+              return 1;
+            return 0;
+          })
+
+          
+          let smallestDistance = 500; //largest distance should be ~441 (from 0,0,0 to 255,255,255)
+          let closestColor = '';
 
           var colorShow = document.getElementById('close-color');
           colorShow.innerHTML = "";
@@ -96,15 +105,18 @@
           newColorDiv.setAttribute("style", "background-color: #" +icolor) ;
       		newColorDiv.innerHTML = "User Color: " + icolor;
 
-      		colorShow.appendChild(newColorDiv);
+          colorShow.appendChild(newColorDiv);
+          
+          closeArray.slice(3).forEach(
+            s => {
+              var foundColorDiv = document.createElement('div');
+              foundColorDiv.className ="color-div";
+              foundColorDiv.setAttribute("style", "background-color: " +s[1][1] );
+              foundColorDiv.innerHTML = "Named Color: " + s[1][0] + " Distance: " + s[0];
 
-      		var foundColorDiv = document.createElement('div');
-      		foundColorDiv.className ="color-div";
-      		foundColorDiv.setAttribute("style", "background-color: " +closestColor[1] );
-      		foundColorDiv.innerHTML = "Named Color: " + closestColor[0];
-
-      		colorShow.appendChild(foundColorDiv);
-
+              colorShow.appendChild(foundColorDiv);
+            }
+          )
       	}
 
 
