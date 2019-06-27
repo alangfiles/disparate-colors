@@ -19,7 +19,7 @@
     }
   </style>
   <body>
-    <center><h1>Closest Color</h1></center>
+    <center><h1>Closest Color</h1>
     <p>
       Find closest named css color for rgb value:
             </p>
@@ -34,19 +34,25 @@
         value="go!"
         onclick="findClosestColor();return false;"
       />
+    </center>
     <div id="close-color"></div>
     <hr/>
 
-    <center><h1>Disparate Colors</h1></center>
+    <center><h1>Disparate Colors</h1>
     <input type="number" id="number-of-colors" min="1" max="50" value="5" />
       <input
         type="button"
         value="go!"
         onclick="generateColors();return false;"
       />
+    </center>
     <div id="color-show"></div>
 
     <script>
+
+      let randomColor;
+      randomColor = "" + Math.floor(Math.random()*255).toString(16) + ""+Math.floor(Math.random()*255).toString(16)+""+Math.floor(Math.random()*255).toString(16)
+      document.getElementById("close-color-input").value=randomColor
 
       	function findClosestColor(){
 
